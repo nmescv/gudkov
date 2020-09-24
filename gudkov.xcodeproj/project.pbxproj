@@ -1,0 +1,79 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		5276B707251D40CD0053B524 /* lab04.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab04.html; sourceTree = "<group>"; };
+		52E4E1512519DD6E00F43249 /* lab01.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab01.html; sourceTree = "<group>"; };
+		52E4E1522519DE1600F43249 /* lab02.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab02.html; sourceTree = "<group>"; };
+		52E4E1532519DE2900F43249 /* lab03.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab03.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		52E4E14A2519DD4100F43249 = {
+			isa = PBXGroup;
+			children = (
+				5276B707251D40CD0053B524 /* lab04.html */,
+				52E4E1532519DE2900F43249 /* lab03.html */,
+				52E4E1522519DE1600F43249 /* lab02.html */,
+				52E4E1512519DD6E00F43249 /* lab01.html */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		52E4E14B2519DD4100F43249 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+			};
+			buildConfigurationList = 52E4E14E2519DD4100F43249 /* Build configuration list for PBXProject "gudkov" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52E4E14A2519DD4100F43249;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		52E4E14F2519DD4100F43249 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		52E4E1502519DD4100F43249 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52E4E14E2519DD4100F43249 /* Build configuration list for PBXProject "gudkov" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E4E14F2519DD4100F43249 /* Debug */,
+				52E4E1502519DD4100F43249 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52E4E14B2519DD4100F43249 /* Project object */;
+}
