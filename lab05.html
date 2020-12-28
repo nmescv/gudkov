@@ -1,0 +1,140 @@
+<HTML>
+<head>
+    <meta charset="utf-8">
+    <title>ЛР5 КГ</title>
+</head>
+<body>
+<canvas id = "lab05" width="500" height="500" style="border:1px dashed violet;"></canvas>
+
+    <script>
+        function Line(ctx, x0, y0, x1, y1) {
+            let dy = Math.abs(y1 - y0);
+            let dx = Math.abs(x1 - x0);
+            let dmax = Math.max(dx, dy);
+            let dmin = Math.min(dx, dy);
+            let xdir = 1;
+            if (x1 < x0) xdir = -1;
+            let ydir = 1;
+            if (y1 < y0) ydir = -1;
+            let eps = 0;
+            let s = 1;
+            let k = 2 * dmin;
+            if (dy <= dx) {
+                let y = y0;
+                for (let x = x0; x * xdir <= x1 * xdir; x += xdir) {
+                    ctx.fillRect(x * s, y * s, 2 * s, 2 * s);
+                    eps = eps + k;
+                    if (eps > dmax) {
+                        y += ydir;
+                        eps = eps - 2 * dmax;
+                    }
+                }
+            } else {
+                let x = x0;
+                for (let y = y0; y * ydir <= y1 * ydir; y += ydir) {
+                    ctx.fillRect(x * s, y * s, 2 * s, 2 * s);
+                    eps = eps + k;
+                    if (eps > dmax) {
+                        x += xdir;
+                        eps = eps - 2 * dmax;
+                    }
+                }
+            }
+        }
+        function intersect(ctx, xa, ya, xb, yb, xp1, yp1, xp2, yp2) {
+            let t = ((ya - yp1) * (xp2 - xp1) - (xa - xp1) * (yp2 - yp1)) /
+                ((xb - xa) * (yp2 - yp1) - (yb - ya) * (xp2 - xp1));
+            let sign = 1;
+            if ((xb - xa) * (yp2 - yp1) - (yb - ya) * (xp2 - xp1) < 0) {
+                sign = -1
+            }
+            return {t, sign};
+        }
+        let canvas = document.getElementById('lab05');
+        let ctx = canvas.getContext('2d');
+
+        let points_idx = 0, positives_idx = 0, negatives_idx = 0;
+        let points = []
+        let positives = [];
+        let negatives = [];
+        let state = 0;
+
+        canvas.addEventListener("contextmenu", function () {
+            console.log("contextmenu");
+            if (state === 0) {
+                state = 1;
+                Line(ctx, points[0],
+                    points[1],
+                    points[(points_idx - 1) * 2],
+                    points[(points_idx - 1) * 2 + 1]);
+            }
+        });
+
+        canvas.addEventListener("click", function (e) {
+            switch (state) {
+                case 0:
+                    points[points_idx * 2] = e.offsetX;
+                    points[points_idx * 2 + 1] = e.offsetY;
+                    console.log(points);
+                    if (points_idx > 0) {
+                        Line(ctx, points[(points_idx - 1) * 2],
+                            points[(points_idx - 1) * 2 + 1],
+                            points[points_idx * 2],
+                            points[points_idx * 2 + 1]);
+                    }
+                    ++points_idx;
+                    break
+                case 1:
+                    x0 = e.offsetX;
+                    y0 = e.offsetY;
+                    ctx.fillRect(x0, y0, 3, 3);
+                    state = 2;
+                    break
+                default:
+                    x1 = e.offsetX;
+                    y1 = e.offsetY;
+                    ctx.fillRect(x1, y1, 3, 3);
+                    let dx1 = points[0] - points[2];
+                    let dy1 = points[1] - points[3];
+                    let dx2 = points[4] - points[6];
+                    let dy2 = points[5] - points[7];
+                    for (let i = 0; i < points_idx; ++i) {
+                        let j = i + 1;
+                        if (j === points_idx) j = 0;
+                        let res = intersect(ctx, x0,
+                            y0,
+                            x1,
+                            y1,
+                            points[i * 2],
+                            points[i * 2 + 1],
+                            points[j * 2],
+                            points[j * 2 + 1]);
+                        res.sign > 0 ? positives[positives_idx++] = res.t
+                            : negatives[negatives_idx++] = res.t;
+                    }
+                    let start, end;
+                    if (dx1 * dy2 - dy1 * dx2 > 0) {
+                        console.log(true);
+                        start = positives.sort()[0];
+                        end = negatives.sort()[negatives.length - 1];
+                    } else {
+                        start = positives.sort()[positives.length - 1];
+                        end = negatives.sort()[0];
+                    }
+                    Line(ctx, start * (x1 - x0) + x0,
+                        start * (y1 - y0) + y0,
+                        end * (x1 - x0) + x0,
+                        end * (y1 - y0) + y0);
+                    state = 0;
+                    points = [];
+                    points_idx = 0;
+                    positives_idx = 0;
+                    negatives_idx = 0;
+                    positives = [];
+                    negatives = [];
+            }
+        });
+    </script>
+</body>
+</HTML>
+
