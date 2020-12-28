@@ -5,15 +5,15 @@
 
 | № ЛР          | Статус выполнения |
 |:-------------:|:-----------------:|
-| 1             | :arrows_counterclockwise: |
-| 2             | :arrows_counterclockwise:  |
-| 3             | :arrows_counterclockwise: |
+| 1             | :heavy_check_mark: - принято |
+| 2             | :heavy_check_mark: - принято  |
+| 3             | :heavy_check_mark: - принято |
 | 4             |                    |
 | 5             |             |
 | 6             |                 |
 | 7             |                  |
 | 8             |                     |
-| 9             |                     
+| 9             |  :no_good: - не требует выполнения                   
 
 
 :heavy_check_mark: - принято
