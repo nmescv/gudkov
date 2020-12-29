@@ -8,15 +8,33 @@
 
 /* Begin PBXFileReference section */
 		5276B707251D40CD0053B524 /* lab04.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab04.html; sourceTree = "<group>"; };
+		52D59191259AB0C700071BD3 /* lab06.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab06.html; sourceTree = "<group>"; };
+		52D59192259AB11C00071BD3 /* lab07.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab07.html; sourceTree = "<group>"; };
+		52D59194259AB1B500071BD3 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		52D59195259AB1CA00071BD3 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		52D59196259AB1E900071BD3 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		52E4E1512519DD6E00F43249 /* lab01.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab01.html; sourceTree = "<group>"; };
 		52E4E1522519DE1600F43249 /* lab02.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab02.html; sourceTree = "<group>"; };
 		52E4E1532519DE2900F43249 /* lab03.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lab03.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		52D59193259AB1A100071BD3 /* lab08 */ = {
+			isa = PBXGroup;
+			children = (
+				52D59194259AB1B500071BD3 /* index.html */,
+				52D59195259AB1CA00071BD3 /* script.js */,
+				52D59196259AB1E900071BD3 /* style.css */,
+			);
+			path = lab08;
+			sourceTree = "<group>";
+		};
 		52E4E14A2519DD4100F43249 = {
 			isa = PBXGroup;
 			children = (
+				52D59193259AB1A100071BD3 /* lab08 */,
+				52D59192259AB11C00071BD3 /* lab07.html */,
+				52D59191259AB0C700071BD3 /* lab06.html */,
 				5276B707251D40CD0053B524 /* lab04.html */,
 				52E4E1532519DE2900F43249 /* lab03.html */,
 				52E4E1522519DE1600F43249 /* lab02.html */,
